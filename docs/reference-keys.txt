@@ -1,7 +1,11 @@
-fig:nice-fig
-tab:nice-tab
-prerequisites
 intro
+lab5
+lab5section
+section-1-geometric-vs.expontential-graphs
+exponential-growth
+section-2-logistic-growth
+section-3-growth-rate-and-carrying-capacity-effect-on-the-population
+section-4-dispersal-and-meta-population
 literature
 methods
 applications

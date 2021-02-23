@@ -4,27 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>BIOL 2600: Principles of Ecology</title>
+  <meta name="description" content="BIOL 2600: Principles of Ecology" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:title" content="BIOL 2600: Principles of Ecology" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Minimal Book Example" />
+  <meta name="twitter:title" content="BIOL 2600: Principles of Ecology" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
   
 
-<meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2021-02-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,8 +132,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">BIOL 2600: Principles of Ecology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Lab 2: Stream Lab</a></li>
+<li class="chapter" data-level="2" data-path="lab5.html"><a href="lab5.html"><i class="fa fa-check"></i><b>2</b> Exponential vs Logistic Growth</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lab5.html"><a href="lab5.html#lab5section"><i class="fa fa-check"></i><b>2.1</b> Lab 5</a></li>
+<li class="chapter" data-level="2.2" data-path="lab5.html"><a href="lab5.html#section-1-geometric-vs.expontential-graphs"><i class="fa fa-check"></i><b>2.2</b> Section 1: Geometric vs.Expontential Graphs</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="lab5.html"><a href="lab5.html#exponential-growth"><i class="fa fa-check"></i><b>2.2.1</b> Exponential Growth</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="lab5.html"><a href="lab5.html#section-2-logistic-growth"><i class="fa fa-check"></i><b>2.3</b> Section 2: Logistic Growth</a></li>
+<li class="chapter" data-level="2.4" data-path="lab5.html"><a href="lab5.html#section-3-growth-rate-and-carrying-capacity-effect-on-the-population"><i class="fa fa-check"></i><b>2.4</b> Section 3: Growth rate and carrying capacity effect on the population</a></li>
+<li class="chapter" data-level="2.5" data-path="lab5.html"><a href="lab5.html#section-4-dispersal-and-meta-population"><i class="fa fa-check"></i><b>2.5</b> Section 4: Dispersal and Meta-population</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
 <li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
@@ -157,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL 2600: Principles of Ecology</a>
           </h1>
         </div>
 
@@ -166,19 +175,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">A Minimal Book Example</h1>
-<p class="author"><em>Yihui Xie</em></p>
-<p class="date"><em>2021-02-23</em></p>
+<h1 class="title">BIOL 2600: Principles of Ecology</h1>
 </div>
-<div id="prerequisites" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+<div id="introduction" class="section level1 unnumbered" number="">
+<h1>Introduction</h1>
+<p>We are increasing the focus on quantitative skills in our Biology curriculum, in response to changing demands and emphasis within the field of biology itself.</p>
+<p>The <a href="https://ahurford.github.io/quant-guide-all-courses/index.html">quantitative training guide</a> has been writing to teach MUN biology students R coding to build a foundation for more advanced quantitative analysis of data in upper year Biology courses. We anticipate that this guide will also be a useful resource manual that you will refer back to as you use R in your future courses.</p>
+<ul>
+<li><p>Read <a href="https://ahurford.github.io/quant-guide-all-courses/index.html">Introduction</a>. As you read through the next sections if you encounter a word you do not understand, you may wish to consult the <a href="https://ahurford.github.io/quant-guide-all-courses/glossary.html">Glossary</a>.</p></li>
+<li><p>Follow the steps in <a href="https://ahurford.github.io/quant-guide-all-courses/install.html">R and RStudio</a> to install R and RStudio. If you are having issues with installing the software, check the <a href="https://ahurford.github.io/quant-guide-all-courses/faq.html">Frequently Asked Questions</a>.</p></li>
+<li><p><a href="https://ahurford.github.io/quant-guide-all-courses/rstudio.html">Read Finding your way around RStudio</a>. Have your RStudio software open.</p></li>
+<li><p>When you encounter <strong>TRY IT!</strong> or Courier font text in a grey box, this is an example of code that we want you to try in RStudio. Note that you should type the code exactly as it is written.</p></li>
+<li><p>When you encounter EXERCISE or <strong>HAND IN</strong>, this is a question that your laboratory instructor may ask you to complete and hand in.</p></li>
+<li><p>You may wish to re-size the windows on your computer to view both the quantitative training guide and the RStudio software, or you may wish to view the training guide on a tablet, with the software open on your computer.</p></li>
+<li><p>Work through <a href="https://ahurford.github.io/quant-guide-all-courses/rintro.html">Introduction to R</a>. We will sometimes give you only part of the code, or we will <strong>provide code that has a deliberate mistake</strong> in it. This is not to frustrate you - rather, it is a way for you to start to develop your problem solving skills. Read the text before and after the example code carefully for clues as to what you should do.</p></li>
+<li><p>Proceed through the sections as assigned by your lab instructor.</p></li>
+</ul>
+<p>Expect to get stuck. This is normal when learning a new skill. Everyone who uses R, including professionals who have used it for years, gets error messages and have bugs in their code. You might look for help in <a href="https://ahurford.github.io/quant-guide-all-courses/help.html">Getting help</a> or ask for help from an instructor as specified in section 3.</p>
+<p>Once you’ve finished the first-year labs, don’t forget that you have this resource. Whenever you practice using R you will get better at it. If you haven’t used it for a while, your skills get rusty, but by reviewing the relevant sections of the <a href="https://ahurford.github.io/quant-guide-all-courses/">quantitative training guide</a> you will quickly be able to catch up. Before you know it, you will be confidently doing quantitative work in R, which will increase your knowledge, enhance your ability to do advanced biology work, and give you a marketable skill in the work world.</p>
 
 </div>
             </section>
