@@ -7,6 +7,12 @@ exponential-growth
 section-2-logistic-growth
 section-3-growth-rate-and-carrying-capacity-effect-on-the-population
 section-4-dispersal-and-meta-population
+lab7
+lab7work
+method-1-producing-four-separate-plots
+method-2-producing-two-separate-plots-on-the-same-y-axis
+method-3-producing-two-separate-double-y-axis-plots
+method-4-produce-two-double-y-axis-plots-atop-of-each-other
 literature
 methods
 applications
