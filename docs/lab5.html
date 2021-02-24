@@ -136,14 +136,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Lab 2: Stream Lab</a></li>
 <li class="chapter" data-level="2" data-path="lab5.html"><a href="lab5.html"><i class="fa fa-check"></i><b>2</b> Exponential vs Logistic Growth</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="lab5.html"><a href="lab5.html#lab5section"><i class="fa fa-check"></i><b>2.1</b> Lab 5</a></li>
-<li class="chapter" data-level="2.2" data-path="lab5.html"><a href="lab5.html#section-1-geometric-vs.expontential-graphs"><i class="fa fa-check"></i><b>2.2</b> Section 1: Geometric vs.Expontential Graphs</a>
+<li class="chapter" data-level="2.1" data-path="lab5.html"><a href="lab5.html#lab5section"><i class="fa fa-check"></i><b>2.1</b> Lab 5</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="lab5.html"><a href="lab5.html#exponential-growth"><i class="fa fa-check"></i><b>2.2.1</b> Exponential Growth</a></li>
+<li class="chapter" data-level="2.1.1" data-path="lab5.html"><a href="lab5.html#section-1-geometric-vs.expontential-graphs"><i class="fa fa-check"></i><b>2.1.1</b> Section 1: Geometric vs.Expontential Graphs</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lab5.html"><a href="lab5.html#section-2-logistic-growth"><i class="fa fa-check"></i><b>2.1.2</b> Section 2: Logistic Growth</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lab5.html"><a href="lab5.html#section-3-growth-rate-and-carrying-capacity-effect-on-the-population"><i class="fa fa-check"></i><b>2.1.3</b> Section 3: Growth rate and carrying capacity effect on the population</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lab5.html"><a href="lab5.html#section-4-dispersal-and-meta-population"><i class="fa fa-check"></i><b>2.1.4</b> Section 4: Dispersal and Meta-population</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="lab5.html"><a href="lab5.html#section-2-logistic-growth"><i class="fa fa-check"></i><b>2.3</b> Section 2: Logistic Growth</a></li>
-<li class="chapter" data-level="2.4" data-path="lab5.html"><a href="lab5.html#section-3-growth-rate-and-carrying-capacity-effect-on-the-population"><i class="fa fa-check"></i><b>2.4</b> Section 3: Growth rate and carrying capacity effect on the population</a></li>
-<li class="chapter" data-level="2.5" data-path="lab5.html"><a href="lab5.html#section-4-dispersal-and-meta-population"><i class="fa fa-check"></i><b>2.5</b> Section 4: Dispersal and Meta-population</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -262,55 +261,47 @@ This lab has 50 questions and is out of 67.</p>
 </ol>
 <div class="line-block">             i) The population size increases linearly over time.<br />
              ii) The population size increases faster as the population becomes larger.</div>
-</div>
-<div id="section-1-geometric-vs.expontential-graphs" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Section 1: Geometric vs.Expontential Graphs</h2>
-<p><u><strong>Geometric Growth</strong></u></p>
+<div id="section-1-geometric-vs.expontential-graphs" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Section 1: Geometric vs.Expontential Graphs</h3>
+<div id="geometric-growth" class="section level4" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Geometric Growth</h4>
 <p>Recall from class that the formula for a geometric growth model is</p>
 <div class="line-block">             N<sub>t</sub>=N<sub>0</sub><span class="math inline">\(\lambda\)</span><sup>t</sup></div>
 <p>and that an estimate for the finite rate of increase between two years can be calculated by</p>
 <div class="line-block">             <span class="math inline">\(\lambda\)</span>=N<sub>t+1</sub>/N<sub>t</sub></div>
-<p>Knowing this, answer questions 5-8 using the graph below.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lab5.html#cb4-1"></a><span class="co"># Below is a template for R code to produce a Geometric Growth Curve</span></span>
-<span id="cb4-2"><a href="lab5.html#cb4-2"></a><span class="co"># THIS IS JUST A TEMPLATE, SOME PARAMETER VALUES HAVE BEEN CHANGED  </span></span>
-<span id="cb4-3"><a href="lab5.html#cb4-3"></a></span>
-<span id="cb4-4"><a href="lab5.html#cb4-4"></a></span>
-<span id="cb4-5"><a href="lab5.html#cb4-5"></a>dt =<span class="st"> </span><span class="dv">1</span> <span class="co"># dt is the time step or jumps that the model will increase time in. </span></span>
-<span id="cb4-6"><a href="lab5.html#cb4-6"></a>time =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, dt) <span class="co"># This produces a vector from 0 to 8 that increase in </span></span>
-<span id="cb4-7"><a href="lab5.html#cb4-7"></a><span class="co"># steps/jumps of dt.</span></span>
-<span id="cb4-8"><a href="lab5.html#cb4-8"></a><span class="co"># Check it out by typing time in the Console </span></span>
-<span id="cb4-9"><a href="lab5.html#cb4-9"></a></span>
-<span id="cb4-10"><a href="lab5.html#cb4-10"></a></span>
-<span id="cb4-11"><a href="lab5.html#cb4-11"></a><span class="co"># Growth rate</span></span>
-<span id="cb4-12"><a href="lab5.html#cb4-12"></a>r &lt;-<span class="st">  </span><span class="dv">8</span> <span class="co"># r is the geometric growth rate parameter for the model. Changing this </span></span>
-<span id="cb4-13"><a href="lab5.html#cb4-13"></a><span class="co"># value will change the rate at which the population changes. Larger values will </span></span>
-<span id="cb4-14"><a href="lab5.html#cb4-14"></a><span class="co"># grow quick and values under 1 will decrease in size.</span></span>
-<span id="cb4-15"><a href="lab5.html#cb4-15"></a></span>
-<span id="cb4-16"><a href="lab5.html#cb4-16"></a></span>
-<span id="cb4-17"><a href="lab5.html#cb4-17"></a><span class="co"># Population </span></span>
-<span id="cb4-18"><a href="lab5.html#cb4-18"></a>j &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># j will act as a place holder for the model&#39;s prediction of the </span></span>
-<span id="cb4-19"><a href="lab5.html#cb4-19"></a><span class="co"># population abundance.</span></span>
-<span id="cb4-20"><a href="lab5.html#cb4-20"></a>j[<span class="dv">1</span>] =<span class="st"> </span><span class="dv">100</span> <span class="co"># This line informs R that the first value of j or j[1] is 100.</span></span>
-<span id="cb4-21"><a href="lab5.html#cb4-21"></a><span class="co"># To change the starting value of j set another value, etc. j[1]=10</span></span>
-<span id="cb4-22"><a href="lab5.html#cb4-22"></a></span>
-<span id="cb4-23"><a href="lab5.html#cb4-23"></a></span>
-<span id="cb4-24"><a href="lab5.html#cb4-24"></a><span class="co"># If the initial population was 25, how would you indicate this to R?</span></span>
-<span id="cb4-25"><a href="lab5.html#cb4-25"></a><span class="co"># Building a loop </span></span>
-<span id="cb4-26"><a href="lab5.html#cb4-26"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">length</span>(time)<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)){</span>
-<span id="cb4-27"><a href="lab5.html#cb4-27"></a>  <span class="co"># Geometric Growth Equation </span></span>
-<span id="cb4-28"><a href="lab5.html#cb4-28"></a>  j[t <span class="op">+</span><span class="st"> </span><span class="dv">1</span>] &lt;-<span class="st"> </span>(r<span class="op">^</span>t)<span class="op">*</span>j[t]<span class="op">*</span>dt</span>
-<span id="cb4-29"><a href="lab5.html#cb4-29"></a>}</span>
+<p>Knowing this, answer questions 5-8 using the graph below. Below is a template for R code to produce a <em>Geometric Growth Curve</em>. This is an template example, and the parameter values have been changed.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lab5.html#cb4-1"></a>dt =<span class="st"> </span><span class="dv">1</span> <span class="co"># dt is the time step or jumps that the model will increase time in. </span></span>
+<span id="cb4-2"><a href="lab5.html#cb4-2"></a>time =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, dt) <span class="co"># This produces a vector from 0 to 8 that increase in </span></span>
+<span id="cb4-3"><a href="lab5.html#cb4-3"></a><span class="co"># steps/jumps of dt.</span></span>
+<span id="cb4-4"><a href="lab5.html#cb4-4"></a><span class="co"># Check it out by typing time in the Console </span></span>
+<span id="cb4-5"><a href="lab5.html#cb4-5"></a></span>
+<span id="cb4-6"><a href="lab5.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="lab5.html#cb4-7"></a><span class="co"># Growth rate</span></span>
+<span id="cb4-8"><a href="lab5.html#cb4-8"></a>r &lt;-<span class="st">  </span><span class="dv">8</span> <span class="co"># r is the geometric growth rate parameter for the model. Changing this </span></span>
+<span id="cb4-9"><a href="lab5.html#cb4-9"></a><span class="co"># value will change the rate at which the population changes. Larger values will </span></span>
+<span id="cb4-10"><a href="lab5.html#cb4-10"></a><span class="co"># grow quick and values under 1 will decrease in size.</span></span>
+<span id="cb4-11"><a href="lab5.html#cb4-11"></a></span>
+<span id="cb4-12"><a href="lab5.html#cb4-12"></a></span>
+<span id="cb4-13"><a href="lab5.html#cb4-13"></a><span class="co"># Population </span></span>
+<span id="cb4-14"><a href="lab5.html#cb4-14"></a>j &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># j will act as a place holder for the model&#39;s prediction of the </span></span>
+<span id="cb4-15"><a href="lab5.html#cb4-15"></a><span class="co"># population abundance.</span></span>
+<span id="cb4-16"><a href="lab5.html#cb4-16"></a>j[<span class="dv">1</span>] =<span class="st"> </span><span class="dv">100</span> <span class="co"># This line informs R that the first value of j or j[1] is 100.</span></span>
+<span id="cb4-17"><a href="lab5.html#cb4-17"></a><span class="co"># To change the starting value of j set another value, etc. j[1]=10</span></span>
+<span id="cb4-18"><a href="lab5.html#cb4-18"></a></span>
+<span id="cb4-19"><a href="lab5.html#cb4-19"></a></span>
+<span id="cb4-20"><a href="lab5.html#cb4-20"></a><span class="co"># If the initial population was 25, how would you indicate this to R?</span></span>
+<span id="cb4-21"><a href="lab5.html#cb4-21"></a><span class="co"># Building a loop </span></span>
+<span id="cb4-22"><a href="lab5.html#cb4-22"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">length</span>(time)<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)){</span>
+<span id="cb4-23"><a href="lab5.html#cb4-23"></a>  <span class="co"># Geometric Growth Equation </span></span>
+<span id="cb4-24"><a href="lab5.html#cb4-24"></a>  j[t <span class="op">+</span><span class="st"> </span><span class="dv">1</span>] &lt;-<span class="st"> </span>(r<span class="op">^</span>t)<span class="op">*</span>j[t]<span class="op">*</span>dt</span>
+<span id="cb4-25"><a href="lab5.html#cb4-25"></a>}</span>
+<span id="cb4-26"><a href="lab5.html#cb4-26"></a></span>
+<span id="cb4-27"><a href="lab5.html#cb4-27"></a><span class="co"># The loop above tells R to calculate j - population size - based on the </span></span>
+<span id="cb4-28"><a href="lab5.html#cb4-28"></a><span class="co"># equation provided for time steps 1 to the length of the vector (i.e., 8)</span></span>
+<span id="cb4-29"><a href="lab5.html#cb4-29"></a><span class="co"># in steps of 1.</span></span>
 <span id="cb4-30"><a href="lab5.html#cb4-30"></a></span>
-<span id="cb4-31"><a href="lab5.html#cb4-31"></a><span class="co"># The loop above tells R to calculate j - population size - based on the </span></span>
-<span id="cb4-32"><a href="lab5.html#cb4-32"></a><span class="co"># equation provided for time steps 1 to the length of the vector (i.e., 8)</span></span>
-<span id="cb4-33"><a href="lab5.html#cb4-33"></a><span class="co"># in steps of 1.</span></span>
-<span id="cb4-34"><a href="lab5.html#cb4-34"></a></span>
-<span id="cb4-35"><a href="lab5.html#cb4-35"></a><span class="co"># Remove the number sign, #, below when you copy and paste into</span></span>
-<span id="cb4-36"><a href="lab5.html#cb4-36"></a><span class="co"># your R script</span></span>
-<span id="cb4-37"><a href="lab5.html#cb4-37"></a></span>
-<span id="cb4-38"><a href="lab5.html#cb4-38"></a><span class="co"># plot(time, j, xlab=&quot;Time (Weeks)&quot;, ylab =&quot;Number of individuals&quot;,</span></span>
-<span id="cb4-39"><a href="lab5.html#cb4-39"></a><span class="co"># type=&quot;l&quot;) #Plots the data as a line plot</span></span>
-<span id="cb4-40"><a href="lab5.html#cb4-40"></a><span class="co"># points(time, j, col=&quot;red&quot;) # adds the red dots to the line </span></span></code></pre></div>
+<span id="cb4-31"><a href="lab5.html#cb4-31"></a><span class="kw">plot</span>(time, j, <span class="dt">xlab=</span><span class="st">&quot;Time (Weeks)&quot;</span>, <span class="dt">ylab =</span><span class="st">&quot;Number of individuals&quot;</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>) <span class="co">#Plots the data as a line plot</span></span>
+<span id="cb4-32"><a href="lab5.html#cb4-32"></a><span class="kw">points</span>(time, j, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="co"># adds the red dots to the line </span></span></code></pre></div>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><strong>Question 5:</strong> Looking at the plot above, eyeball what is the population’s size at week 6? <strong>(1)</strong></p>
 <p><strong>Question 6:</strong> Eyeball what is the population size at year 7? <strong>(1)</strong></p>
@@ -332,8 +323,9 @@ This lab has 50 questions and is out of 67.</p>
 <div class="line-block">       d) A large population of squirrels that breed continuously and live in a small cabin with little food.</div>
 <p></br> </br> <strong>Question 15:</strong> Threatened monarch butterflies are monitored by measuring the area occupied by overwintering butterflies in Mexico. According to the data collected by The World Wildlife Fund Mexico, monarch butterflies occupied 1.9 hectares one recent winter and 2.7 the following winter (one year later). If the population is growing geometrically and grows at the same rate, how much area should the overwintering butterflies occupy one year after that? <strong>(3)</strong></p>
 <p><strong>Question 16:</strong> Ecologist working with Newfoundland wildlife division have been surveying the population abundance of a woodland caribou population 2 years in a row, only counting the number of females. (Note: Often in wildlife management, only females are tracked.) She measured 196 last year and 232 this year. If the caribou population grows geometrically and continues to grow this rate, what will be the size of the population of female caribou 7 years from now (year 9)? (Hint: do two separate calculations to answer the question.) <strong>(3)</strong></p>
-<div id="exponential-growth" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Exponential Growth</h3>
+</div>
+<div id="exponential-growth" class="section level4" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Exponential Growth</h4>
 <p>Recall from class that population size at N<sub>t</sub> can be modeled using an exponential growth by </br> </br></p>
 <div align="center">
 <p>N<sub>t</sub>=N<sub>0</sub><em>e</em><sup>tr</sup></p>
@@ -343,58 +335,54 @@ This lab has 50 questions and is out of 67.</p>
 <p><em>r</em> = ln(<span class="math inline">\(\lambda\)</span>)</p>
 </div>
 <p></br></p>
-<p>Use the graph below for red-winged blackbirds to answer the following questions (17-22).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lab5.html#cb5-1"></a><span class="co"># Here is an example code for a population with Exponential Growth. </span></span>
-<span id="cb5-2"><a href="lab5.html#cb5-2"></a><span class="co"># THIS IS EXAMPLE CODE, AND SOME PARAMETER VALUES HAVE BEEN CHANGED</span></span>
-<span id="cb5-3"><a href="lab5.html#cb5-3"></a></span>
-<span id="cb5-4"><a href="lab5.html#cb5-4"></a><span class="kw">library</span>(deSolve) <span class="co"># The deSolve package is needed to solve the predicted abundance</span></span>
-<span id="cb5-5"><a href="lab5.html#cb5-5"></a></span>
-<span id="cb5-6"><a href="lab5.html#cb5-6"></a><span class="co"># Variables that will be used </span></span>
-<span id="cb5-7"><a href="lab5.html#cb5-7"></a>N =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of individuals</span></span>
-<span id="cb5-8"><a href="lab5.html#cb5-8"></a>y =<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb5-9"><a href="lab5.html#cb5-9"></a>res =<span class="st"> </span><span class="ot">NULL</span></span>
-<span id="cb5-10"><a href="lab5.html#cb5-10"></a></span>
-<span id="cb5-11"><a href="lab5.html#cb5-11"></a><span class="co"># Function that will be predicting the abundance</span></span>
-<span id="cb5-12"><a href="lab5.html#cb5-12"></a>exponential.growth &lt;-<span class="cf">function</span>(t,y,parameters){ </span>
-<span id="cb5-13"><a href="lab5.html#cb5-13"></a>  N  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]                            </span>
-<span id="cb5-14"><a href="lab5.html#cb5-14"></a>  </span>
-<span id="cb5-15"><a href="lab5.html#cb5-15"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
-<span id="cb5-16"><a href="lab5.html#cb5-16"></a>    dN  &lt;-<span class="st"> </span>r<span class="op">*</span>N                      </span>
-<span id="cb5-17"><a href="lab5.html#cb5-17"></a>    res&lt;-<span class="kw">c</span>(dN) </span>
-<span id="cb5-18"><a href="lab5.html#cb5-18"></a>    <span class="kw">list</span>(res) </span>
-<span id="cb5-19"><a href="lab5.html#cb5-19"></a>  }) </span>
-<span id="cb5-20"><a href="lab5.html#cb5-20"></a>}</span>
-<span id="cb5-21"><a href="lab5.html#cb5-21"></a></span>
-<span id="cb5-22"><a href="lab5.html#cb5-22"></a><span class="co"># </span></span>
-<span id="cb5-23"><a href="lab5.html#cb5-23"></a></span>
-<span id="cb5-24"><a href="lab5.html#cb5-24"></a><span class="co"># Parameters</span></span>
-<span id="cb5-25"><a href="lab5.html#cb5-25"></a>r =<span class="st"> </span><span class="fl">0.24</span>  <span class="co"># Here r is the capita growth rate, with larger values growing faster. </span></span>
-<span id="cb5-26"><a href="lab5.html#cb5-26"></a><span class="co"># Values below 0 grow slower.</span></span>
-<span id="cb5-27"><a href="lab5.html#cb5-27"></a></span>
-<span id="cb5-28"><a href="lab5.html#cb5-28"></a><span class="co"># Initial condition</span></span>
-<span id="cb5-29"><a href="lab5.html#cb5-29"></a>N0=<span class="dv">10</span> <span class="co"># N0 is the starting population size. Setting it to 10 lets R know what </span></span>
-<span id="cb5-30"><a href="lab5.html#cb5-30"></a><span class="co"># the starting population is.</span></span>
-<span id="cb5-31"><a href="lab5.html#cb5-31"></a><span class="co"># How would you let tell R the initial population is 55</span></span>
-<span id="cb5-32"><a href="lab5.html#cb5-32"></a></span>
-<span id="cb5-33"><a href="lab5.html#cb5-33"></a><span class="co"># Time </span></span>
-<span id="cb5-34"><a href="lab5.html#cb5-34"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">1</span>) <span class="co"># What does this vector look like? How long is it? What are </span></span>
-<span id="cb5-35"><a href="lab5.html#cb5-35"></a><span class="co"># the time steps?</span></span>
-<span id="cb5-36"><a href="lab5.html#cb5-36"></a></span>
-<span id="cb5-37"><a href="lab5.html#cb5-37"></a></span>
-<span id="cb5-38"><a href="lab5.html#cb5-38"></a><span class="co"># The parameter vector holds all parameter values within the model. </span></span>
-<span id="cb5-39"><a href="lab5.html#cb5-39"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r)</span>
-<span id="cb5-40"><a href="lab5.html#cb5-40"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">N=</span>N0), times, exponential.growth, parameters)) </span>
+<p>Use the graph below for red-winged blackbirds to answer the following questions (17-22). Here is an example code for a population with <em>Exponential Growth</em>. This is an example template, and some parameter values have been changed.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lab5.html#cb5-1"></a><span class="kw">library</span>(deSolve) <span class="co"># The deSolve package is needed to solve the predicted abundance</span></span>
+<span id="cb5-2"><a href="lab5.html#cb5-2"></a></span>
+<span id="cb5-3"><a href="lab5.html#cb5-3"></a><span class="co"># Variables that will be used </span></span>
+<span id="cb5-4"><a href="lab5.html#cb5-4"></a>N =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of individuals</span></span>
+<span id="cb5-5"><a href="lab5.html#cb5-5"></a>y =<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb5-6"><a href="lab5.html#cb5-6"></a>res =<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb5-7"><a href="lab5.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="lab5.html#cb5-8"></a><span class="co"># Function that will be predicting the abundance</span></span>
+<span id="cb5-9"><a href="lab5.html#cb5-9"></a>exponential.growth &lt;-<span class="cf">function</span>(t,y,parameters){ </span>
+<span id="cb5-10"><a href="lab5.html#cb5-10"></a>  N  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]                            </span>
+<span id="cb5-11"><a href="lab5.html#cb5-11"></a>  </span>
+<span id="cb5-12"><a href="lab5.html#cb5-12"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
+<span id="cb5-13"><a href="lab5.html#cb5-13"></a>    dN  &lt;-<span class="st"> </span>r<span class="op">*</span>N                      </span>
+<span id="cb5-14"><a href="lab5.html#cb5-14"></a>    res&lt;-<span class="kw">c</span>(dN) </span>
+<span id="cb5-15"><a href="lab5.html#cb5-15"></a>    <span class="kw">list</span>(res) </span>
+<span id="cb5-16"><a href="lab5.html#cb5-16"></a>  }) </span>
+<span id="cb5-17"><a href="lab5.html#cb5-17"></a>}</span>
+<span id="cb5-18"><a href="lab5.html#cb5-18"></a></span>
+<span id="cb5-19"><a href="lab5.html#cb5-19"></a><span class="co"># </span></span>
+<span id="cb5-20"><a href="lab5.html#cb5-20"></a></span>
+<span id="cb5-21"><a href="lab5.html#cb5-21"></a><span class="co"># Parameters</span></span>
+<span id="cb5-22"><a href="lab5.html#cb5-22"></a>r =<span class="st"> </span><span class="fl">0.24</span>  <span class="co"># Here r is the capita growth rate, with larger values growing faster. </span></span>
+<span id="cb5-23"><a href="lab5.html#cb5-23"></a><span class="co"># Values below 0 grow slower.</span></span>
+<span id="cb5-24"><a href="lab5.html#cb5-24"></a></span>
+<span id="cb5-25"><a href="lab5.html#cb5-25"></a><span class="co"># Initial condition</span></span>
+<span id="cb5-26"><a href="lab5.html#cb5-26"></a>N0=<span class="dv">10</span> <span class="co"># N0 is the starting population size. Setting it to 10 lets R know what </span></span>
+<span id="cb5-27"><a href="lab5.html#cb5-27"></a><span class="co"># the starting population is.</span></span>
+<span id="cb5-28"><a href="lab5.html#cb5-28"></a><span class="co"># How would you let tell R the initial population is 55</span></span>
+<span id="cb5-29"><a href="lab5.html#cb5-29"></a></span>
+<span id="cb5-30"><a href="lab5.html#cb5-30"></a><span class="co"># Time </span></span>
+<span id="cb5-31"><a href="lab5.html#cb5-31"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">1</span>) <span class="co"># What does this vector look like? How long is it? What are </span></span>
+<span id="cb5-32"><a href="lab5.html#cb5-32"></a><span class="co"># the time steps?</span></span>
+<span id="cb5-33"><a href="lab5.html#cb5-33"></a></span>
+<span id="cb5-34"><a href="lab5.html#cb5-34"></a></span>
+<span id="cb5-35"><a href="lab5.html#cb5-35"></a><span class="co"># The parameter vector holds all parameter values within the model. </span></span>
+<span id="cb5-36"><a href="lab5.html#cb5-36"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r)</span>
+<span id="cb5-37"><a href="lab5.html#cb5-37"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">N=</span>N0), times, exponential.growth, parameters)) </span>
+<span id="cb5-38"><a href="lab5.html#cb5-38"></a></span>
+<span id="cb5-39"><a href="lab5.html#cb5-39"></a><span class="co"># The R code for an exponential growth model is a little more complex compared to </span></span>
+<span id="cb5-40"><a href="lab5.html#cb5-40"></a><span class="co"># Geometric Growth, but here is what it&#39;s doing! </span></span>
 <span id="cb5-41"><a href="lab5.html#cb5-41"></a></span>
-<span id="cb5-42"><a href="lab5.html#cb5-42"></a><span class="co"># The R code for an exponential growth model is a little more complex compared to </span></span>
-<span id="cb5-43"><a href="lab5.html#cb5-43"></a><span class="co"># Geometric Growth, but here is what it&#39;s doing! </span></span>
-<span id="cb5-44"><a href="lab5.html#cb5-44"></a></span>
-<span id="cb5-45"><a href="lab5.html#cb5-45"></a><span class="co"># R has many built in functions that do complex analyses. In this case, we are using </span></span>
-<span id="cb5-46"><a href="lab5.html#cb5-46"></a><span class="co"># the function Isoda to numerically solve a differential equation (yes! calculus).</span></span>
-<span id="cb5-47"><a href="lab5.html#cb5-47"></a><span class="co"># The equation is the model for exponential growth.</span></span>
-<span id="cb5-48"><a href="lab5.html#cb5-48"></a></span>
-<span id="cb5-49"><a href="lab5.html#cb5-49"></a><span class="co"># Remove number sign before the plot function when you copy and paste into your terminal</span></span>
-<span id="cb5-50"><a href="lab5.html#cb5-50"></a><span class="co"># plot(nsol$time,nsol$N,bty = &quot;l&quot;, lwd = 1, xlab = &quot; Time (weeks)&quot;, </span></span>
-<span id="cb5-51"><a href="lab5.html#cb5-51"></a><span class="co"># ylab = &quot;Number of individuals&quot;, col=&quot;blue&quot;)</span></span></code></pre></div>
+<span id="cb5-42"><a href="lab5.html#cb5-42"></a><span class="co"># R has many built in functions that do complex analyses. In this case, we are using </span></span>
+<span id="cb5-43"><a href="lab5.html#cb5-43"></a><span class="co"># the function Isoda to numerically solve a differential equation (yes! calculus).</span></span>
+<span id="cb5-44"><a href="lab5.html#cb5-44"></a><span class="co"># The equation is the model for exponential growth.</span></span>
+<span id="cb5-45"><a href="lab5.html#cb5-45"></a></span>
+<span id="cb5-46"><a href="lab5.html#cb5-46"></a><span class="kw">plot</span>(nsol<span class="op">$</span>time,nsol<span class="op">$</span>N,<span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot; Time (weeks)&quot;</span>, </span>
+<span id="cb5-47"><a href="lab5.html#cb5-47"></a><span class="dt">ylab =</span> <span class="st">&quot;Number of individuals&quot;</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><strong>Question 17:</strong> Eyeball what the population size at week 6? Eyeball what the population size at week 7? <strong>(2)</strong></p>
 <p><strong>Question 18:</strong> What is the finite rate of increase, <span class="math inline">\(\lambda\)</span> for this time period (between week 6 and 7)? <strong>(1)</strong></p>
@@ -427,50 +415,48 @@ This lab has 50 questions and is out of 67.</p>
 <p></br> </br></p>
 </div>
 </div>
-<div id="section-2-logistic-growth" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Section 2: Logistic Growth</h2>
+<div id="section-2-logistic-growth" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Section 2: Logistic Growth</h3>
 <p>Recall that the definition of a <strong>logistic growth</strong> curve is a pattern of growth that produces a sigmoidal, or S-shaped, population growth curve; population size levels off at carrying capacity (<em>K</em>). The population grows quickly the farther the population is from it’s carrying capacity, <em>K</em>. As it approaches <em>K</em>, the population’s growth rate begins to slow. <strong>Example</strong> a population of mountain goats in an area that can only sustain a maximum of 100 individuals.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lab5.html#cb6-1"></a><span class="co"># This is an example code for Logistic Growth curve</span></span>
-<span id="cb6-2"><a href="lab5.html#cb6-2"></a><span class="co"># THIS IS AN EXAMPLE THIS CODE, PARAMETER VALUES HAVE BEEN CHANGED </span></span>
-<span id="cb6-3"><a href="lab5.html#cb6-3"></a><span class="co"># The deSolve package is important for the code to run. Enure that is loaded.</span></span>
-<span id="cb6-4"><a href="lab5.html#cb6-4"></a><span class="kw">library</span>(deSolve)</span>
-<span id="cb6-5"><a href="lab5.html#cb6-5"></a></span>
-<span id="cb6-6"><a href="lab5.html#cb6-6"></a><span class="co"># Species variables</span></span>
-<span id="cb6-7"><a href="lab5.html#cb6-7"></a>G =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of Goats (#/time)</span></span>
-<span id="cb6-8"><a href="lab5.html#cb6-8"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Vector that holds the number of populations/</span></span>
-<span id="cb6-9"><a href="lab5.html#cb6-9"></a><span class="co"># groups. More important with several species.</span></span>
-<span id="cb6-10"><a href="lab5.html#cb6-10"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
-<span id="cb6-11"><a href="lab5.html#cb6-11"></a></span>
-<span id="cb6-12"><a href="lab5.html#cb6-12"></a><span class="co">#function</span></span>
-<span id="cb6-13"><a href="lab5.html#cb6-13"></a>logistic.model&lt;-<span class="cf">function</span>(t, y, parameters){ </span>
-<span id="cb6-14"><a href="lab5.html#cb6-14"></a>  G  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Population place in vector               </span></span>
-<span id="cb6-15"><a href="lab5.html#cb6-15"></a>  </span>
-<span id="cb6-16"><a href="lab5.html#cb6-16"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
-<span id="cb6-17"><a href="lab5.html#cb6-17"></a>    dG  &lt;-<span class="st"> </span>r<span class="op">*</span>G<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>G<span class="op">/</span>k)   <span class="co"># Logistic growth equation              </span></span>
-<span id="cb6-18"><a href="lab5.html#cb6-18"></a>    res&lt;-<span class="kw">c</span>(dG) </span>
-<span id="cb6-19"><a href="lab5.html#cb6-19"></a>    <span class="kw">list</span>(res) </span>
-<span id="cb6-20"><a href="lab5.html#cb6-20"></a>  }) </span>
-<span id="cb6-21"><a href="lab5.html#cb6-21"></a>}</span>
-<span id="cb6-22"><a href="lab5.html#cb6-22"></a></span>
-<span id="cb6-23"><a href="lab5.html#cb6-23"></a></span>
-<span id="cb6-24"><a href="lab5.html#cb6-24"></a><span class="co"># Parameters</span></span>
-<span id="cb6-25"><a href="lab5.html#cb6-25"></a>r =<span class="st"> </span><span class="dv">70</span> <span class="co"># Growth rate of the population. Changing this will change the rate </span></span>
-<span id="cb6-26"><a href="lab5.html#cb6-26"></a><span class="co"># the population grows </span></span>
-<span id="cb6-27"><a href="lab5.html#cb6-27"></a>k =<span class="st">  </span><span class="dv">100</span> <span class="co"># The carrying capacity of the population</span></span>
-<span id="cb6-28"><a href="lab5.html#cb6-28"></a></span>
-<span id="cb6-29"><a href="lab5.html#cb6-29"></a><span class="co"># Initial condition</span></span>
-<span id="cb6-30"><a href="lab5.html#cb6-30"></a>G0 =<span class="st"> </span><span class="dv">80</span>          <span class="co"># Initial population size</span></span>
-<span id="cb6-31"><a href="lab5.html#cb6-31"></a></span>
-<span id="cb6-32"><a href="lab5.html#cb6-32"></a><span class="co"># Time </span></span>
-<span id="cb6-33"><a href="lab5.html#cb6-33"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps </span></span>
-<span id="cb6-34"><a href="lab5.html#cb6-34"></a><span class="co"># of 0.5</span></span>
-<span id="cb6-35"><a href="lab5.html#cb6-35"></a></span>
-<span id="cb6-36"><a href="lab5.html#cb6-36"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r, <span class="dt">k=</span>k)</span>
-<span id="cb6-37"><a href="lab5.html#cb6-37"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">G=</span>G0), times, logistic.model, parameters)) </span>
-<span id="cb6-38"><a href="lab5.html#cb6-38"></a></span>
-<span id="cb6-39"><a href="lab5.html#cb6-39"></a><span class="co"># Plot (remove # from below when you copy into R)</span></span>
-<span id="cb6-40"><a href="lab5.html#cb6-40"></a><span class="co"># plot(nsol$time, nsol$G, type = &quot;l&quot;, lwd = 1, xlab = &quot; Time (days)&quot;, </span></span>
-<span id="cb6-41"><a href="lab5.html#cb6-41"></a><span class="co"># ylab = &quot;Number of individuals&quot;, col=&quot;blue&quot;)</span></span></code></pre></div>
+<p>This is an example code for <em>Logistic Growth curve</em>. This is an example of code and parameter values have been changed.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lab5.html#cb6-1"></a><span class="kw">library</span>(deSolve) </span>
+<span id="cb6-2"><a href="lab5.html#cb6-2"></a><span class="co"># The deSolve package is important for the code to run. Enure that is loaded.</span></span>
+<span id="cb6-3"><a href="lab5.html#cb6-3"></a></span>
+<span id="cb6-4"><a href="lab5.html#cb6-4"></a><span class="co"># Species variables</span></span>
+<span id="cb6-5"><a href="lab5.html#cb6-5"></a>G =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of Goats (#/time)</span></span>
+<span id="cb6-6"><a href="lab5.html#cb6-6"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Vector that holds the number of populations/</span></span>
+<span id="cb6-7"><a href="lab5.html#cb6-7"></a><span class="co"># groups. More important with several species.</span></span>
+<span id="cb6-8"><a href="lab5.html#cb6-8"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
+<span id="cb6-9"><a href="lab5.html#cb6-9"></a></span>
+<span id="cb6-10"><a href="lab5.html#cb6-10"></a><span class="co">#function</span></span>
+<span id="cb6-11"><a href="lab5.html#cb6-11"></a>logistic.model&lt;-<span class="cf">function</span>(t, y, parameters){ </span>
+<span id="cb6-12"><a href="lab5.html#cb6-12"></a>  G  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Population place in vector               </span></span>
+<span id="cb6-13"><a href="lab5.html#cb6-13"></a>  </span>
+<span id="cb6-14"><a href="lab5.html#cb6-14"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
+<span id="cb6-15"><a href="lab5.html#cb6-15"></a>    dG  &lt;-<span class="st"> </span>r<span class="op">*</span>G<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>G<span class="op">/</span>k)   <span class="co"># Logistic growth equation              </span></span>
+<span id="cb6-16"><a href="lab5.html#cb6-16"></a>    res&lt;-<span class="kw">c</span>(dG) </span>
+<span id="cb6-17"><a href="lab5.html#cb6-17"></a>    <span class="kw">list</span>(res) </span>
+<span id="cb6-18"><a href="lab5.html#cb6-18"></a>  }) </span>
+<span id="cb6-19"><a href="lab5.html#cb6-19"></a>}</span>
+<span id="cb6-20"><a href="lab5.html#cb6-20"></a></span>
+<span id="cb6-21"><a href="lab5.html#cb6-21"></a></span>
+<span id="cb6-22"><a href="lab5.html#cb6-22"></a><span class="co"># Parameters</span></span>
+<span id="cb6-23"><a href="lab5.html#cb6-23"></a>r =<span class="st"> </span><span class="dv">70</span> <span class="co"># Growth rate of the population. Changing this will change the rate </span></span>
+<span id="cb6-24"><a href="lab5.html#cb6-24"></a><span class="co"># the population grows </span></span>
+<span id="cb6-25"><a href="lab5.html#cb6-25"></a>k =<span class="st">  </span><span class="dv">100</span> <span class="co"># The carrying capacity of the population</span></span>
+<span id="cb6-26"><a href="lab5.html#cb6-26"></a></span>
+<span id="cb6-27"><a href="lab5.html#cb6-27"></a><span class="co"># Initial condition</span></span>
+<span id="cb6-28"><a href="lab5.html#cb6-28"></a>G0 =<span class="st"> </span><span class="dv">80</span>          <span class="co"># Initial population size</span></span>
+<span id="cb6-29"><a href="lab5.html#cb6-29"></a></span>
+<span id="cb6-30"><a href="lab5.html#cb6-30"></a><span class="co"># Time </span></span>
+<span id="cb6-31"><a href="lab5.html#cb6-31"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps </span></span>
+<span id="cb6-32"><a href="lab5.html#cb6-32"></a><span class="co"># of 0.5</span></span>
+<span id="cb6-33"><a href="lab5.html#cb6-33"></a></span>
+<span id="cb6-34"><a href="lab5.html#cb6-34"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r, <span class="dt">k=</span>k)</span>
+<span id="cb6-35"><a href="lab5.html#cb6-35"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">G=</span>G0), times, logistic.model, parameters)) </span>
+<span id="cb6-36"><a href="lab5.html#cb6-36"></a></span>
+<span id="cb6-37"><a href="lab5.html#cb6-37"></a><span class="kw">plot</span>(nsol<span class="op">$</span>time, nsol<span class="op">$</span>G, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot; Time (days)&quot;</span>, </span>
+<span id="cb6-38"><a href="lab5.html#cb6-38"></a><span class="dt">ylab =</span> <span class="st">&quot;Number of individuals&quot;</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><strong>Question 28:</strong> By eyeballing the graph above, what is the approximate carrying capacity, <em>K</em>, of the population of mountain goats. <strong>(1)</strong></p>
 <p><strong>Question 29:</strong> Is the population growth rate the same throughout the entire plot? How does it change? <strong>(2)</strong></p>
@@ -492,51 +478,49 @@ This lab has 50 questions and is out of 67.</p>
 <div class="line-block">       iii) Day ten, the population size is 1227 and day eleven, it is 1272.</div>
 <p></br></p>
 </div>
-<div id="section-3-growth-rate-and-carrying-capacity-effect-on-the-population" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Section 3: Growth rate and carrying capacity effect on the population</h2>
-<p></br> In this section, will we plot the population of hares over a 20 year period.</p>
-<p></br></p>
+<div id="section-3-growth-rate-and-carrying-capacity-effect-on-the-population" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Section 3: Growth rate and carrying capacity effect on the population</h3>
+<p>In this section, will we plot the population of hares over a 20 year period. Below is example code and paramter values have been changed.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lab5.html#cb7-1"></a><span class="co"># Packages that is important for the code to run</span></span>
-<span id="cb7-2"><a href="lab5.html#cb7-2"></a><span class="co"># This is just example code; parameter values do not belong to the plot below</span></span>
-<span id="cb7-3"><a href="lab5.html#cb7-3"></a><span class="kw">library</span>(deSolve)</span>
-<span id="cb7-4"><a href="lab5.html#cb7-4"></a></span>
-<span id="cb7-5"><a href="lab5.html#cb7-5"></a><span class="co"># Species variables</span></span>
-<span id="cb7-6"><a href="lab5.html#cb7-6"></a>H =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of hares (#/time)</span></span>
-<span id="cb7-7"><a href="lab5.html#cb7-7"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Vector that holds the number of populations/groups. More </span></span>
-<span id="cb7-8"><a href="lab5.html#cb7-8"></a><span class="co"># important with several species.</span></span>
-<span id="cb7-9"><a href="lab5.html#cb7-9"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
-<span id="cb7-10"><a href="lab5.html#cb7-10"></a></span>
-<span id="cb7-11"><a href="lab5.html#cb7-11"></a><span class="co">#function</span></span>
-<span id="cb7-12"><a href="lab5.html#cb7-12"></a>logistic.model &lt;-<span class="st"> </span><span class="cf">function</span>(t, y, parameters){ </span>
-<span id="cb7-13"><a href="lab5.html#cb7-13"></a>  H  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Initial population size               </span></span>
-<span id="cb7-14"><a href="lab5.html#cb7-14"></a>  </span>
-<span id="cb7-15"><a href="lab5.html#cb7-15"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
-<span id="cb7-16"><a href="lab5.html#cb7-16"></a>    dH  &lt;-<span class="st"> </span>r<span class="op">*</span>H<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>H<span class="op">/</span>k)   <span class="co"># Logistic growth equation              </span></span>
-<span id="cb7-17"><a href="lab5.html#cb7-17"></a>    res&lt;-<span class="kw">c</span>(dH) </span>
-<span id="cb7-18"><a href="lab5.html#cb7-18"></a>    <span class="kw">list</span>(res) </span>
-<span id="cb7-19"><a href="lab5.html#cb7-19"></a>  }) </span>
-<span id="cb7-20"><a href="lab5.html#cb7-20"></a>}</span>
+<span id="cb7-2"><a href="lab5.html#cb7-2"></a><span class="kw">library</span>(deSolve)</span>
+<span id="cb7-3"><a href="lab5.html#cb7-3"></a></span>
+<span id="cb7-4"><a href="lab5.html#cb7-4"></a><span class="co"># Species variables</span></span>
+<span id="cb7-5"><a href="lab5.html#cb7-5"></a>H =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Number of hares (#/time)</span></span>
+<span id="cb7-6"><a href="lab5.html#cb7-6"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Vector that holds the number of populations/groups. More </span></span>
+<span id="cb7-7"><a href="lab5.html#cb7-7"></a><span class="co"># important with several species.</span></span>
+<span id="cb7-8"><a href="lab5.html#cb7-8"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
+<span id="cb7-9"><a href="lab5.html#cb7-9"></a></span>
+<span id="cb7-10"><a href="lab5.html#cb7-10"></a><span class="co">#function</span></span>
+<span id="cb7-11"><a href="lab5.html#cb7-11"></a>logistic.model &lt;-<span class="st"> </span><span class="cf">function</span>(t, y, parameters){ </span>
+<span id="cb7-12"><a href="lab5.html#cb7-12"></a>  H  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Initial population size               </span></span>
+<span id="cb7-13"><a href="lab5.html#cb7-13"></a>  </span>
+<span id="cb7-14"><a href="lab5.html#cb7-14"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
+<span id="cb7-15"><a href="lab5.html#cb7-15"></a>    dH  &lt;-<span class="st"> </span>r<span class="op">*</span>H<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>H<span class="op">/</span>k)   <span class="co"># Logistic growth equation              </span></span>
+<span id="cb7-16"><a href="lab5.html#cb7-16"></a>    res&lt;-<span class="kw">c</span>(dH) </span>
+<span id="cb7-17"><a href="lab5.html#cb7-17"></a>    <span class="kw">list</span>(res) </span>
+<span id="cb7-18"><a href="lab5.html#cb7-18"></a>  }) </span>
+<span id="cb7-19"><a href="lab5.html#cb7-19"></a>}</span>
+<span id="cb7-20"><a href="lab5.html#cb7-20"></a></span>
 <span id="cb7-21"><a href="lab5.html#cb7-21"></a></span>
-<span id="cb7-22"><a href="lab5.html#cb7-22"></a></span>
-<span id="cb7-23"><a href="lab5.html#cb7-23"></a><span class="co"># Parameters</span></span>
-<span id="cb7-24"><a href="lab5.html#cb7-24"></a>r =<span class="st"> </span><span class="dv">100</span> <span class="co"># Growth rate of the population. Changing this will change the rate the </span></span>
-<span id="cb7-25"><a href="lab5.html#cb7-25"></a><span class="co"># population grows </span></span>
-<span id="cb7-26"><a href="lab5.html#cb7-26"></a>k =<span class="st">  </span><span class="dv">10</span> <span class="co"># The carrying capacity of the population</span></span>
-<span id="cb7-27"><a href="lab5.html#cb7-27"></a></span>
-<span id="cb7-28"><a href="lab5.html#cb7-28"></a><span class="co"># Initial condition</span></span>
-<span id="cb7-29"><a href="lab5.html#cb7-29"></a>H0 =<span class="st"> </span><span class="dv">1</span>            <span class="co"># Initial population size</span></span>
-<span id="cb7-30"><a href="lab5.html#cb7-30"></a></span>
-<span id="cb7-31"><a href="lab5.html#cb7-31"></a><span class="co"># Time </span></span>
-<span id="cb7-32"><a href="lab5.html#cb7-32"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps of 0.5</span></span>
-<span id="cb7-33"><a href="lab5.html#cb7-33"></a></span>
-<span id="cb7-34"><a href="lab5.html#cb7-34"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r, <span class="dt">k=</span>k)</span>
-<span id="cb7-35"><a href="lab5.html#cb7-35"></a><span class="co"># When you have multiple parameter, list them all within the parameter vector. </span></span>
-<span id="cb7-36"><a href="lab5.html#cb7-36"></a></span>
-<span id="cb7-37"><a href="lab5.html#cb7-37"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">H =</span> H0), times, logistic.model, parameters)) </span>
-<span id="cb7-38"><a href="lab5.html#cb7-38"></a></span>
-<span id="cb7-39"><a href="lab5.html#cb7-39"></a><span class="co"># Plot</span></span>
-<span id="cb7-40"><a href="lab5.html#cb7-40"></a><span class="co">#plot(nsol$time, nsol$H, type = &quot;l&quot;, lwd = 1, xlab = &quot; Time (years)&quot;, </span></span>
-<span id="cb7-41"><a href="lab5.html#cb7-41"></a><span class="co">#     ylab = &quot;Number of individuals&quot;, col=&quot;red&quot;)</span></span></code></pre></div>
+<span id="cb7-22"><a href="lab5.html#cb7-22"></a><span class="co"># Parameters</span></span>
+<span id="cb7-23"><a href="lab5.html#cb7-23"></a>r =<span class="st"> </span><span class="dv">100</span> <span class="co"># Growth rate of the population. Changing this will change the rate the </span></span>
+<span id="cb7-24"><a href="lab5.html#cb7-24"></a><span class="co"># population grows </span></span>
+<span id="cb7-25"><a href="lab5.html#cb7-25"></a>k =<span class="st">  </span><span class="dv">10</span> <span class="co"># The carrying capacity of the population</span></span>
+<span id="cb7-26"><a href="lab5.html#cb7-26"></a></span>
+<span id="cb7-27"><a href="lab5.html#cb7-27"></a><span class="co"># Initial condition</span></span>
+<span id="cb7-28"><a href="lab5.html#cb7-28"></a>H0 =<span class="st"> </span><span class="dv">1</span>            <span class="co"># Initial population size</span></span>
+<span id="cb7-29"><a href="lab5.html#cb7-29"></a></span>
+<span id="cb7-30"><a href="lab5.html#cb7-30"></a><span class="co"># Time </span></span>
+<span id="cb7-31"><a href="lab5.html#cb7-31"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps of 0.5</span></span>
+<span id="cb7-32"><a href="lab5.html#cb7-32"></a></span>
+<span id="cb7-33"><a href="lab5.html#cb7-33"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">r=</span>r, <span class="dt">k=</span>k)</span>
+<span id="cb7-34"><a href="lab5.html#cb7-34"></a><span class="co"># When you have multiple parameter, list them all within the parameter vector. </span></span>
+<span id="cb7-35"><a href="lab5.html#cb7-35"></a></span>
+<span id="cb7-36"><a href="lab5.html#cb7-36"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">H =</span> H0), times, logistic.model, parameters)) </span>
+<span id="cb7-37"><a href="lab5.html#cb7-37"></a></span>
+<span id="cb7-38"><a href="lab5.html#cb7-38"></a><span class="co"># Plot</span></span>
+<span id="cb7-39"><a href="lab5.html#cb7-39"></a><span class="kw">plot</span>(nsol<span class="op">$</span>time, nsol<span class="op">$</span>H, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot; Time (years)&quot;</span>, </span>
+<span id="cb7-40"><a href="lab5.html#cb7-40"></a><span class="dt">ylab =</span> <span class="st">&quot;Number of individuals&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p></br></p>
 <p><strong>Question 38:</strong> Looking at the graph eyeball when the population reaches it’s carrying capacity. What are two different methods to make the population reach it’s carrying capacity sooner? <strong>Can not change the same thing twice</strong>. <strong>(1)</strong></p>
@@ -547,7 +531,8 @@ This lab has 50 questions and is out of 67.</p>
 </div>
 <p></br></p>
 <p><strong>Question 40:</strong> In the mountain goat example, the population grows exponentially for a while before it reaches a point at which the goats in the habitat are using most of the available plant food, leaving barely little extra food for newly-born goats to survive. As the population approaches this point, the birth rate ratio to the death rate decreases (that is, there are relatively fewer births compared to deaths). The entire mountain habitat contains a finite number of plants. In the same way that a single hill establishes a carrying capacity for goats, so does the full mountain range, only a much larger value of <em>K</em>. <strong>Give one example of something/events that would decrease the population that would be density-dependent (i.e., depend on goat population size) and one that would be density-independent (i.e., not depend on goat population size). (2)</strong></p>
-<p><strong>Answer the following questions below using the following graph.</strong> </br></p>
+<p></br>
+<strong>Answer the following questions below using the following graph.</strong></p>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p></br> <strong>Use the following graph to answer the questions below.</strong> </br></p>
 <p><strong>Question 41:</strong> Eyeball the <em>K</em> for each of the lines above and order from highest to lowest.<strong>Example</strong> A=10, B=5, C=1. <strong>(1)</strong></p>
@@ -560,48 +545,46 @@ This lab has 50 questions and is out of 67.</p>
 <p><strong>Question 44:</strong> Model two population of ducks where species A starts with a population of 50, and species B begins with a population 150. If both populations had a per capita growth rate of 1.6 and a carrying capacity, <em>K</em> of 100, would they reach it at the same time? Produce a plot that contains both species. (<strong>Hint all the R code needed is provided within the provided code above, but may be within more than one chunk of code.</strong>) <strong>(3)</strong></p>
 <p></br></p>
 </div>
-<div id="section-4-dispersal-and-meta-population" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Section 4: Dispersal and Meta-population</h2>
-<p>A metapopulation consists of a group of spatially separated populations of the same species which interact at some level.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lab5.html#cb8-1"></a><span class="co"># This is an example code for a metapopulation model</span></span>
-<span id="cb8-2"><a href="lab5.html#cb8-2"></a></span>
-<span id="cb8-3"><a href="lab5.html#cb8-3"></a><span class="co"># Packages that is important for the code to run</span></span>
-<span id="cb8-4"><a href="lab5.html#cb8-4"></a><span class="kw">library</span>(deSolve)</span>
-<span id="cb8-5"><a href="lab5.html#cb8-5"></a></span>
-<span id="cb8-6"><a href="lab5.html#cb8-6"></a><span class="co"># Species variables</span></span>
-<span id="cb8-7"><a href="lab5.html#cb8-7"></a>p =<span class="st"> </span><span class="ot">NULL</span>        <span class="co">#Proportion or fraction of patches occupied by goats (patches are </span></span>
-<span id="cb8-8"><a href="lab5.html#cb8-8"></a><span class="co">#               either occupied or not)</span></span>
-<span id="cb8-9"><a href="lab5.html#cb8-9"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Fraction of occupied patches. </span></span>
-<span id="cb8-10"><a href="lab5.html#cb8-10"></a><span class="co"># More important with several species.</span></span>
-<span id="cb8-11"><a href="lab5.html#cb8-11"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
-<span id="cb8-12"><a href="lab5.html#cb8-12"></a></span>
-<span id="cb8-13"><a href="lab5.html#cb8-13"></a><span class="co">#function</span></span>
-<span id="cb8-14"><a href="lab5.html#cb8-14"></a>meta.population&lt;-<span class="cf">function</span>(t,y,parameters){ </span>
-<span id="cb8-15"><a href="lab5.html#cb8-15"></a>  p  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Informs R the place N has within the vector              </span></span>
-<span id="cb8-16"><a href="lab5.html#cb8-16"></a>  </span>
-<span id="cb8-17"><a href="lab5.html#cb8-17"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
-<span id="cb8-18"><a href="lab5.html#cb8-18"></a>    dP  &lt;-<span class="st"> </span>m<span class="op">*</span>p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">-</span>e<span class="op">*</span>p   <span class="co"># Metapopulation model            </span></span>
-<span id="cb8-19"><a href="lab5.html#cb8-19"></a>    res&lt;-<span class="kw">c</span>(dP) </span>
-<span id="cb8-20"><a href="lab5.html#cb8-20"></a>    <span class="kw">list</span>(res) </span>
-<span id="cb8-21"><a href="lab5.html#cb8-21"></a>  }) </span>
-<span id="cb8-22"><a href="lab5.html#cb8-22"></a>}</span>
-<span id="cb8-23"><a href="lab5.html#cb8-23"></a></span>
-<span id="cb8-24"><a href="lab5.html#cb8-24"></a></span>
-<span id="cb8-25"><a href="lab5.html#cb8-25"></a><span class="co"># Parameters</span></span>
-<span id="cb8-26"><a href="lab5.html#cb8-26"></a>m =<span class="st"> </span><span class="fl">0.5</span> <span class="co"># Migration rate amount patches (1/time)</span></span>
-<span id="cb8-27"><a href="lab5.html#cb8-27"></a>e =<span class="st"> </span><span class="fl">0.4</span> <span class="co"># Extinction rate of patches </span></span>
-<span id="cb8-28"><a href="lab5.html#cb8-28"></a><span class="co"># Initial condition</span></span>
-<span id="cb8-29"><a href="lab5.html#cb8-29"></a>P0 =<span class="st"> </span><span class="dv">1</span>          <span class="co"># Initial population size</span></span>
-<span id="cb8-30"><a href="lab5.html#cb8-30"></a></span>
-<span id="cb8-31"><a href="lab5.html#cb8-31"></a><span class="co"># Time </span></span>
-<span id="cb8-32"><a href="lab5.html#cb8-32"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps of 0.5</span></span>
-<span id="cb8-33"><a href="lab5.html#cb8-33"></a></span>
-<span id="cb8-34"><a href="lab5.html#cb8-34"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">m=</span>m, <span class="dt">e=</span>e)</span>
-<span id="cb8-35"><a href="lab5.html#cb8-35"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">P=</span>P0), times, meta.population, parameters)) </span>
-<span id="cb8-36"><a href="lab5.html#cb8-36"></a></span>
-<span id="cb8-37"><a href="lab5.html#cb8-37"></a><span class="co"># Plot</span></span>
-<span id="cb8-38"><a href="lab5.html#cb8-38"></a><span class="kw">plot</span>(<span class="dt">x =</span> nsol<span class="op">$</span>time, <span class="dt">y =</span> nsol<span class="op">$</span>P, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot; Time (days)&quot;</span>,</span>
-<span id="cb8-39"><a href="lab5.html#cb8-39"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Proportion of occupied patches&quot;</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div id="section-4-dispersal-and-meta-population" class="section level3" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Section 4: Dispersal and Meta-population</h3>
+<p>A metapopulation consists of a group of spatially separated populations of the same species which interact at some level. Below is example code for a metapopulation model.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lab5.html#cb8-1"></a><span class="co"># Packages that is important for the code to run</span></span>
+<span id="cb8-2"><a href="lab5.html#cb8-2"></a><span class="kw">library</span>(deSolve)</span>
+<span id="cb8-3"><a href="lab5.html#cb8-3"></a></span>
+<span id="cb8-4"><a href="lab5.html#cb8-4"></a><span class="co"># Species variables</span></span>
+<span id="cb8-5"><a href="lab5.html#cb8-5"></a>p =<span class="st"> </span><span class="ot">NULL</span>        <span class="co">#Proportion or fraction of patches occupied by goats (patches are </span></span>
+<span id="cb8-6"><a href="lab5.html#cb8-6"></a><span class="co">#               either occupied or not)</span></span>
+<span id="cb8-7"><a href="lab5.html#cb8-7"></a>y =<span class="st"> </span><span class="ot">NULL</span>        <span class="co"># Fraction of occupied patches. </span></span>
+<span id="cb8-8"><a href="lab5.html#cb8-8"></a><span class="co"># More important with several species.</span></span>
+<span id="cb8-9"><a href="lab5.html#cb8-9"></a>res =<span class="st"> </span><span class="ot">NULL</span>      <span class="co"># Vector that holds model parameters</span></span>
+<span id="cb8-10"><a href="lab5.html#cb8-10"></a></span>
+<span id="cb8-11"><a href="lab5.html#cb8-11"></a><span class="co">#function</span></span>
+<span id="cb8-12"><a href="lab5.html#cb8-12"></a>meta.population&lt;-<span class="cf">function</span>(t,y,parameters){ </span>
+<span id="cb8-13"><a href="lab5.html#cb8-13"></a>  p  &lt;-<span class="st"> </span>y[<span class="dv">1</span>]             <span class="co"># Informs R the place N has within the vector              </span></span>
+<span id="cb8-14"><a href="lab5.html#cb8-14"></a>  </span>
+<span id="cb8-15"><a href="lab5.html#cb8-15"></a>  <span class="kw">with</span>(<span class="kw">as.list</span>(parameters),{  </span>
+<span id="cb8-16"><a href="lab5.html#cb8-16"></a>    dP  &lt;-<span class="st"> </span>m<span class="op">*</span>p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">-</span>e<span class="op">*</span>p   <span class="co"># Metapopulation model            </span></span>
+<span id="cb8-17"><a href="lab5.html#cb8-17"></a>    res&lt;-<span class="kw">c</span>(dP) </span>
+<span id="cb8-18"><a href="lab5.html#cb8-18"></a>    <span class="kw">list</span>(res) </span>
+<span id="cb8-19"><a href="lab5.html#cb8-19"></a>  }) </span>
+<span id="cb8-20"><a href="lab5.html#cb8-20"></a>}</span>
+<span id="cb8-21"><a href="lab5.html#cb8-21"></a></span>
+<span id="cb8-22"><a href="lab5.html#cb8-22"></a></span>
+<span id="cb8-23"><a href="lab5.html#cb8-23"></a><span class="co"># Parameters</span></span>
+<span id="cb8-24"><a href="lab5.html#cb8-24"></a>m =<span class="st"> </span><span class="fl">0.5</span> <span class="co"># Migration rate amount patches (1/time)</span></span>
+<span id="cb8-25"><a href="lab5.html#cb8-25"></a>e =<span class="st"> </span><span class="fl">0.4</span> <span class="co"># Extinction rate of patches </span></span>
+<span id="cb8-26"><a href="lab5.html#cb8-26"></a><span class="co"># Initial condition</span></span>
+<span id="cb8-27"><a href="lab5.html#cb8-27"></a>P0 =<span class="st"> </span><span class="dv">1</span>          <span class="co"># Initial population size</span></span>
+<span id="cb8-28"><a href="lab5.html#cb8-28"></a></span>
+<span id="cb8-29"><a href="lab5.html#cb8-29"></a><span class="co"># Time </span></span>
+<span id="cb8-30"><a href="lab5.html#cb8-30"></a>times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.5</span>) <span class="co"># Length of time that the model will run, 0 to 20, with steps of 0.5</span></span>
+<span id="cb8-31"><a href="lab5.html#cb8-31"></a></span>
+<span id="cb8-32"><a href="lab5.html#cb8-32"></a>parameters&lt;-<span class="kw">c</span>(<span class="dt">m=</span>m, <span class="dt">e=</span>e)</span>
+<span id="cb8-33"><a href="lab5.html#cb8-33"></a>nsol &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">lsoda</span>(<span class="dt">y =</span> <span class="kw">c</span>(<span class="dt">P=</span>P0), times, meta.population, parameters)) </span>
+<span id="cb8-34"><a href="lab5.html#cb8-34"></a></span>
+<span id="cb8-35"><a href="lab5.html#cb8-35"></a><span class="co"># Plot</span></span>
+<span id="cb8-36"><a href="lab5.html#cb8-36"></a><span class="kw">plot</span>(<span class="dt">x =</span> nsol<span class="op">$</span>time, <span class="dt">y =</span> nsol<span class="op">$</span>P, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot; Time (days)&quot;</span>,</span>
+<span id="cb8-37"><a href="lab5.html#cb8-37"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Proportion of occupied patches&quot;</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="biol_2600_bookdown_files_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p></br></p>
 <p><strong>Question 45:</strong> If 7 out of the 10 patches had mice within them, what is the patch occupancy <em>P</em>? <strong>(1)</strong></p>
@@ -630,6 +613,7 @@ This lab has 50 questions and is out of 67.</p>
 <div class="line-block">       d) Roads should generally decrease meta-populations survival by reducing dispersal, which decreases the recolonization of patches.</div>
 <p></br></p>
 
+</div>
 </div>
 </div>
             </section>

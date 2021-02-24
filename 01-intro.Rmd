@@ -127,9 +127,9 @@ library(deSolve)
 |              i) The population size increases linearly over time.
 |              ii) The population size increases faster as the population becomes larger.
 
-## Section 1: Geometric vs.Expontential Graphs
+### Section 1: Geometric vs.Expontential Graphs
 
-<u>**Geometric Growth**</u>
+#### Geometric Growth
 
 Recall from class that the formula for a geometric growth model is
 
@@ -139,13 +139,8 @@ and that an estimate for the finite rate of increase between two years can be ca
 
 |              $\lambda$=N~t+1~/N~t~
 
-Knowing this, answer questions 5-8 using the graph below.
-
-```{r echo=T}
-# Below is a template for R code to produce a Geometric Growth Curve
-# THIS IS JUST A TEMPLATE, SOME PARAMETER VALUES HAVE BEEN CHANGED  
-
-
+Knowing this, answer questions 5-8 using the graph below. Below is a template for R code to produce a *Geometric Growth Curve*. This is an template example, and the parameter values have been changed. 
+```{r, eval=FALSE}
 dt = 1 # dt is the time step or jumps that the model will increase time in. 
 time = seq(0, 8, dt) # This produces a vector from 0 to 8 that increase in 
 # steps/jumps of dt.
@@ -176,12 +171,8 @@ for(t in seq(1, length(time)-1,1)){
 # equation provided for time steps 1 to the length of the vector (i.e., 8)
 # in steps of 1.
 
-# Remove the number sign, #, below when you copy and paste into
-# your R script
-
-# plot(time, j, xlab="Time (Weeks)", ylab ="Number of individuals",
-# type="l") #Plots the data as a line plot
-# points(time, j, col="red") # adds the red dots to the line 
+plot(time, j, xlab="Time (Weeks)", ylab ="Number of individuals", type="l") #Plots the data as a line plot
+points(time, j, col="red") # adds the red dots to the line 
 ```
 
 ```{r, echo=F}
@@ -306,7 +297,7 @@ legend("topleft", legend = c("A", "B", "C"), lty = 1, col=c("black", "red", "blu
 
 **Question 16:** Ecologist working with Newfoundland wildlife division have been surveying the population abundance of a woodland caribou population 2 years in a row, only counting the number of females. (Note: Often in wildlife management, only females are tracked.) She measured 196 last year and 232 this year. If the caribou population grows geometrically and continues to grow this rate, what will be the size of the population of female caribou 7 years from now (year 9)? (Hint: do two separate calculations to answer the question.) **(3)**
 
-### Exponential Growth
+#### Exponential Growth
 
 Recall from class that population size at N~t~ can be modeled using an exponential growth by </br> </br>
 
@@ -322,12 +313,9 @@ N~t~=N~0~*e*^tr^
 
 </br>
 
-Use the graph below for red-winged blackbirds to answer the following questions (17-22).
+Use the graph below for red-winged blackbirds to answer the following questions (17-22). Here is an example code for a population with *Exponential Growth*. This is an example template, and some parameter values have been changed.
 
-```{r, echo=T}
-# Here is an example code for a population with Exponential Growth. 
-# THIS IS EXAMPLE CODE, AND SOME PARAMETER VALUES HAVE BEEN CHANGED
-
+```{r, eval=FALSE}
 library(deSolve) # The deSolve package is needed to solve the predicted abundance
 
 # Variables that will be used 
@@ -373,9 +361,8 @@ nsol <- as.data.frame(lsoda(y = c(N=N0), times, exponential.growth, parameters))
 # the function Isoda to numerically solve a differential equation (yes! calculus).
 # The equation is the model for exponential growth.
 
-# Remove number sign before the plot function when you copy and paste into your terminal
-# plot(nsol$time,nsol$N,bty = "l", lwd = 1, xlab = " Time (weeks)", 
-# ylab = "Number of individuals", col="blue")
+plot(nsol$time,nsol$N,bty = "l", lwd = 1, xlab = " Time (weeks)", 
+ylab = "Number of individuals", col="blue")
 ```
 
 ```{r, echo=F}
@@ -472,15 +459,15 @@ N~t~=N~0~ *e*^tr^
 
 </br> </br>
 
-## Section 2: Logistic Growth
+### Section 2: Logistic Growth
 
 Recall that the definition of a **logistic growth** curve is a pattern of growth that produces a sigmoidal, or S-shaped, population growth curve; population size levels off at carrying capacity (*K*). The population grows quickly the farther the population is from it's carrying capacity, *K*. As it approaches *K*, the population's growth rate begins to slow. **Example** a population of mountain goats in an area that can only sustain a maximum of 100 individuals.
 
-```{r, echo=T}
-# This is an example code for Logistic Growth curve
-# THIS IS AN EXAMPLE THIS CODE, PARAMETER VALUES HAVE BEEN CHANGED 
+This is an example code for *Logistic Growth curve*. This is an example of code and parameter values have been changed.
+
+```{r, eval=FALSE}
+library(deSolve) 
 # The deSolve package is important for the code to run. Enure that is loaded.
-library(deSolve)
 
 # Species variables
 G = NULL        # Number of Goats (#/time)
@@ -515,9 +502,8 @@ times <- seq(0,20,0.5) # Length of time that the model will run, 0 to 20, with s
 parameters<-c(r=r, k=k)
 nsol <- as.data.frame(lsoda(y = c(G=G0), times, logistic.model, parameters)) 
 
-# Plot (remove # from below when you copy into R)
-# plot(nsol$time, nsol$G, type = "l", lwd = 1, xlab = " Time (days)", 
-# ylab = "Number of individuals", col="blue")
+plot(nsol$time, nsol$G, type = "l", lwd = 1, xlab = " Time (days)", 
+ylab = "Number of individuals", col="blue")
 ```
 
 ```{r, echo=F}
@@ -596,15 +582,13 @@ plot(nsol$time, nsol$G, type = "l", lwd = 1, xlab = " Time (days)", ylab = "Numb
 
 </br>
 
-## Section 3: Growth rate and carrying capacity effect on the population
+### Section 3: Growth rate and carrying capacity effect on the population
 
-</br> In this section, will we plot the population of hares over a 20 year period.
+In this section, will we plot the population of hares over a 20 year period. Below is example code and paramter values have been changed.
 
-</br>
 
-```{r}
+```{r, eval=FALSE}
 # Packages that is important for the code to run
-# This is just example code; parameter values do not belong to the plot below
 library(deSolve)
 
 # Species variables
@@ -642,8 +626,8 @@ parameters<-c(r=r, k=k)
 nsol <- as.data.frame(lsoda(y = c(H = H0), times, logistic.model, parameters)) 
 
 # Plot
-#plot(nsol$time, nsol$H, type = "l", lwd = 1, xlab = " Time (years)", 
-#     ylab = "Number of individuals", col="red")
+plot(nsol$time, nsol$H, type = "l", lwd = 1, xlab = " Time (years)", 
+ylab = "Number of individuals", col="red")
 ```
 
 ```{r, echo=F}
@@ -704,7 +688,8 @@ plot(nsol$time, nsol$H, type = "l", lwd = 1, xlab = " Time (years)",
 
 **Question 40:** In the mountain goat example, the population grows exponentially for a while before it reaches a point at which the goats in the habitat are using most of the available plant food, leaving barely little extra food for newly-born goats to survive. As the population approaches this point, the birth rate ratio to the death rate decreases (that is, there are relatively fewer births compared to deaths). The entire mountain habitat contains a finite number of plants. In the same way that a single hill establishes a carrying capacity for goats, so does the full mountain range, only a much larger value of *K*. **Give one example of something/events that would decrease the population that would be density-dependent (i.e., depend on goat population size) and one that would be density-independent (i.e., not depend on goat population size). (2)**
 
-**Answer the following questions below using the following graph.** </br>
+</br>
+**Answer the following questions below using the following graph.** 
 
 ```{r, echo=F}
 # Packages that is important for the code to run
@@ -778,13 +763,11 @@ legend("topleft", legend = c("A", "B", "C"), lty = 1, col=c("blue", "red", "blac
 
 </br>
 
-## Section 4: Dispersal and Meta-population
+### Section 4: Dispersal and Meta-population
 
-A metapopulation consists of a group of spatially separated populations of the same species which interact at some level.
+A metapopulation consists of a group of spatially separated populations of the same species which interact at some level. Below is example code for a metapopulation model. 
 
 ```{r}
-# This is an example code for a metapopulation model
-
 # Packages that is important for the code to run
 library(deSolve)
 
@@ -875,6 +858,3 @@ plot(x = nsol$time, y = nsol$P, type = "l", lwd = 1, xlab = " Time (days)",
 |        d) Roads should generally decrease meta-populations survival by reducing dispersal, which decreases the recolonization of patches.
 
 </br>
-
-
-
